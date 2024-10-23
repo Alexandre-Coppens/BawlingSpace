@@ -9,7 +9,8 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] float radius = 0.1f;
     [SerializeField] float speed = 1.2f;
-    [SerializeField] GameObject asteroidFolder;
+    public GameObject asteroidFolder;
+    [SerializeField] Transform[] asteroids;
 
     // Start is called before the first frame update
     void Start()
@@ -27,13 +28,23 @@ public class Bullet : MonoBehaviour
     {
         transform.position += transform.up * speed * Time.deltaTime;
         if(Vector3.Distance(transform.position, startPos) >= maxDist) { Destroy(gameObject); }
+        CheckAsteroids();
     }
 
     private void CheckAsteroids()
     {
-        foreach(Transform asteroid in asteroidFolder.GetComponentsInChildren<Transform>())
+        asteroids = asteroidFolder.GetComponentsInChildren<Transform>();
+        foreach (Transform asteroid in asteroids)
         {
-
+            Asteroids astScript = asteroid.GetComponent<Asteroids>();
+            if(astScript != null) 
+            {
+                if (Vector3.Distance(asteroid.position, transform.position) < astScript.radius + radius)
+                {
+                    astScript.Destroy();
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 

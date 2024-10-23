@@ -98,10 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSize: 2
-  bigSpeed: 1
-  mediumSpeed: 2
-  smallSpeed: 4
-  bigRadius: 1
-  mediumRadius: 0.6
-  smallRadius: 1
+  speed: 2
+  radius: 0.6
   velocity: {x: 0, y: 0, z: 0}
+  medium: {fileID: 8000678108935378430}
+  small: {fileID: 7834843823846587802, guid: 45539293ac76ba64c87b69abcbc55db2, type: 3}

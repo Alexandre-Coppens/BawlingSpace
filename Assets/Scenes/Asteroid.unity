@@ -321,17 +321,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1847010563}
     m_Modifications:
-    - target: {fileID: 494111567107259611, guid: 138ace58287d46c4e9eadc098331a46a, type: 3}
-      propertyPath: speed
-      value: 2
+    - target: {fileID: 5739959864606334070, guid: 138ace58287d46c4e9eadc098331a46a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
       objectReference: {fileID: 0}
-    - target: {fileID: 494111567107259611, guid: 138ace58287d46c4e9eadc098331a46a, type: 3}
-      propertyPath: radius
-      value: 0.6
+    - target: {fileID: 5739959864606334070, guid: 138ace58287d46c4e9eadc098331a46a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5739959864606334070, guid: 138ace58287d46c4e9eadc098331a46a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: 0.03000021
       objectReference: {fileID: 0}
     - target: {fileID: 5739959864606334070, guid: 138ace58287d46c4e9eadc098331a46a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -475,14 +475,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1847010563}
     m_Modifications:
-    - target: {fileID: 148540976089465444, guid: 3940c9f3d1d346840a52d478811d0ecf, type: 3}
-      propertyPath: radius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 148540976089465444, guid: 3940c9f3d1d346840a52d478811d0ecf, type: 3}
-      propertyPath: currentSize
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1560844061530171120, guid: 3940c9f3d1d346840a52d478811d0ecf, type: 3}
       propertyPath: m_Name
       value: BigAsteroid
@@ -702,14 +694,6 @@ PrefabInstance:
     - target: {fileID: 2243351676255795373, guid: 45539293ac76ba64c87b69abcbc55db2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3616905753187190757, guid: 45539293ac76ba64c87b69abcbc55db2, type: 3}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3616905753187190757, guid: 45539293ac76ba64c87b69abcbc55db2, type: 3}
-      propertyPath: radius
-      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 7834843823846587802, guid: 45539293ac76ba64c87b69abcbc55db2, type: 3}
       propertyPath: m_Name

@@ -6,7 +6,7 @@ public class Asteroids : MonoBehaviour
 {
     public int currentSize = 3;
     [SerializeField] float speed = 1f;
-    [SerializeField] float radius = 3f;
+    public float radius = 3f;
     [SerializeField] Vector3 velocity;
 
     [SerializeField] GameObject medium;
@@ -39,21 +39,22 @@ public class Asteroids : MonoBehaviour
         if (1.0 < pos.y) { transform.position -= new Vector3(0, height); }
     }
 
-    public float[] GetVariables()
-    {
-        float radius = 0;
-
-        float[] ret = new float[] { transform.position.x,
-                                    transform.position.y,
-                                    transform.position.z,
-                                    radius };
-        return ret;
-    }
-
     public void Destroy()
     {
-        if(currentSize == 3) { GameObject child = Instantiate(medium, transform.position, Quaternion.identity);  child = Instantiate(medium, transform.position, Quaternion.identity); }
-        if(currentSize == 2) { GameObject child = Instantiate(small, transform.position, Quaternion.identity);  child = Instantiate(small, transform.position, Quaternion.identity); }
+        if(currentSize == 3) 
+        { 
+            GameObject child = Instantiate(medium, transform.position, Quaternion.identity);
+            child.transform.parent = transform.parent;
+            child = Instantiate(medium, transform.position, Quaternion.identity);
+            child.transform.parent = transform.parent;
+        }
+        if(currentSize == 2) 
+        { 
+            GameObject child = Instantiate(small, transform.position, Quaternion.identity);
+            child.transform.parent = transform.parent;
+            child = Instantiate(small, transform.position, Quaternion.identity);
+            child.transform.parent = transform.parent;
+        }
         Destroy(gameObject);
     }
 

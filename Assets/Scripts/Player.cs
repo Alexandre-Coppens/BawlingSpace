@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] float testDistance;
 
     [Header("Spaceship")]
-    [SerializeField] float friction = 0.1f;
+    [SerializeField] float speed = 2f;
     [SerializeField] Vector3 velocity;
     [SerializeField] bool canShoot = true;
     [SerializeField] GameObject bulletPREFAB;
@@ -51,8 +51,10 @@ public class Player : MonoBehaviour
 
     private void Inputs()
     {
-        if (Input.GetKey(KeyCode.W)) { velocity += transform.up * Time.deltaTime; }
-        if (Input.GetKey(KeyCode.S)) { velocity -= transform.up * Time.deltaTime; }
+        if (Input.GetKey(KeyCode.W)) { velocity += transform.up * speed * Time.deltaTime; }
+        if (Input.GetKey(KeyCode.S)) { velocity -= transform.up * speed * Time.deltaTime; }
+        if (Input.GetKey(KeyCode.A)) { velocity -= transform.right * speed * Time.deltaTime; }
+        if (Input.GetKey(KeyCode.D)) { velocity += transform.right * speed * Time.deltaTime; }
         if (Input.GetKeyDown(KeyCode.Mouse0) && canShoot) { StartCoroutine(Shoot()); }
     }
 
@@ -74,7 +76,8 @@ public class Player : MonoBehaviour
     private IEnumerator Shoot()
     {
         canShoot = false;
-        Instantiate(bulletPREFAB, transform.position, transform.rotation);
+        GameObject bullet = Instantiate(bulletPREFAB, transform.position, transform.rotation);
+        bullet.GetComponent<Bullet>().asteroidFolder = asteroidFolder;
         yield return new WaitForSeconds(0.2f);
         canShoot = true;
     }
